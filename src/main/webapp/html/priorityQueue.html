@@ -3,32 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <title>PriorityQueue</title>
-
+<script type="text/javascript" src="js/bootstrap.min.js" defer></script>
+<script type="text/javascript" src="js/jquery.min.js" defer></script>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/main.css">
-
-
 </head>
 
 <body>
- <p>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="#">자료구조</a></li>
+            <li><a href="#">알고리듬</a></li>
+            <li><a href="#">문제풀기</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </nav>
+</header>
+<side>
+    <div>MENU</div>
+    <hr>
+    <ul>
+        <li>자료구조</li>
+        <ul>
+            <li>
+                <a href="graph.html">Graph</a>
+            </li>
+            <li>
+                <a href="Linked%20List.html">Linked List</a>
+            </li>
+            <li>
+                <b>Priority Queue</b>
+            </li>
+        </ul>
+        <hr>
+        <li>알고리듬</li>
+        <ul>
+            <li>
+                <a href="floyd_warshall.html">Floyd Warshall</a>
+            </li>
+            <li>
+                <a href="greedyAlgorithm.html">Greedy Algorithm</a>
+            </li>
+            <li>
+                <a href="Z.html">Z algorithm</a>
+            </li>
+        </ul>
+    </ul>
+</side>
+<main>
+
   	<h1>자료구조 : 우선순위 큐 (Priority Queue)</h1>
 
-    <br>
+    <br />
    
     <li> insert, find-min, extract-min을 빠르게 처리하는 자료 구조이다. 다양한 구현법이 존재하지만, 
              대표적인 것은 binary heap이다. 여러 언어의 기본 라이브러리에서 제공하는 것도 바이너리 힙이다.
     </li>
-    <br>
+    <br />
     <li>위키 페이지에 보면 그 외에도, bimodal heap, pairing heap, 등등 여러 방법이 언급되고 있는데,
         그나마 다른데에서 들어봤을 만한 것은 Fibonacci heap 정도이고, 나머지는 굳이 알 필요성을 못느꼈다.
     </li>
-    <br>
+    <br />
     <li>
       기본적인 바이너리 힙은, insert와 extract-min을 O(logn)에 처리하고, heapify를 O(n)에 처리하는데, 
       사실 이것은 Order Statistic Tree로도 가능하다. 이쪽은 extract-min보다 훨씬 일반화된 extract-kth를 O(logn)에 처리 가능하다고 생각하면 된다. 
       그러나 그만큼 상수값이 커진다. 따라서 extract-min만 필요한 경우에는 heap을 쓰는 것이 맞다.
     </li>
-    <br>
+    <br />
     <li>
       Python에서는 우선순위큐가 heapq 모듈에 구현되어있다
       min-heap으로만 구현되어 있다. 커스텀 비교함수나 키를 지원하지 않기 때문에, 
@@ -37,22 +81,22 @@
       데이터가 정수나 실수이고, max-heap으로 쓸때에는, 그냥 -1을 곱한 값을 heapq에 넣는것으로 처리하자. 
       (예: 최대 힙)
     </li>
-    <br>
+    <br />
     <li>
       사실 맥스힙의 경우에는 heapq._heappop_max, heapq._heapify_max 라는 흑마술이 있기는 하다.. 
       맥스힙 연산을 구현해놓은 함수인데, 목적이 퍼블릭하게 사용하게 만든게 아니라, 가른 함수 구현을 위해서 만들어 놓은 것이라서 함수명 앞에 _가 붙어있고, 
       heappush_max는 존재하지 않는다. 그래도 heappify와. pop만 쓰려면 쓸수는 있고, push만 구현하는것이 어렵지도 않긴 하지만.. 
       흑마술 같은 느낌이라서 쓰는게 조금 우려되기는 한다;
     </li>
-    <br>
+    <br />
     <li>
       아래에는 우선순위큐를 사용한 몇가지 테크닉을 설명할건데, 이것들은 속도가 좀 느리기는 하지만 Order Statistic Tree로도 모두 가능하긴 하다.
        cpp라면 multiset을 그냥 쓰면 되니까 따로 코딩면에서 더 편할수도 있다. 다만 python에서는 어차피 Order Statistic Tree도 따로 구현해주어야 한다.
       이 내용은 공통적으로 적용되는 내용이라 아래에서 다시 언급하지 않겠다.
     </li>
-    <br>
+    <br />
     <h1> 임의 원소 삭제를 지원하는 힙</h1> 
-    <br>
+    <br />
 
 
     <li>
@@ -60,13 +104,13 @@
       하지만 이러한 연산이 필요한 경우가 종종 있다.
       사실 삭제만 제공되면 수정은 {수정 전의 값 삭제} + {수정 후의 값 삽입}으로 자연스럽게 지원된다.
     </li>
-    <br>
+    <br />
     <li>
       그냥 이러한 기능을 지원하는 힙을 새로 구현하는 방법도 있다. 구현이 그렇게 어려운 것도 아니지만 좀 귀찮다.
       보다 쉬운 방법은, 실제로 원소를 삭제하는 대신 원소에 마크만 해두고, 마크해둔 원소가 탑에 올라오면 그때 삭제를 하는 것이다.
        새로 힙을 구현할 필요 없이 라이브러리에 이미 구현되어있는 힙을 사용할수 있다.
     </li>
-    <br>
+    <br />
 
     <li>
       Python heapq 모듈 공식 문서 에서도 이 방식을 소개한다
@@ -75,13 +119,13 @@
       그러나 이 방법은 메모리 측면이나 속도 측면 모두에서 덜 효과적이다.
       그것보다는 지워진 원소들을 다른 곳에 따로 저장해서 갖고 있는 방법이 있다. 
     </li>
-    <br>
+    <br />
     <li>
       내가 단순하게 생각했던 방법은 그냥 지워진 원소를 저장하는 셋을 만들어두고, 셋에 포함되어 있는 값이 힙의 top에 올라오면, 
       그 값을 heap과 셋에서 둘다 지우는 방법이었다. 그러나 이경우에 중복된 값이 여러개 있을수도 있으니까, 
       그경우까지 해결하려면 셋 대신 카운터를 쓰는 것으로 방법을 수정해야 했다.
     </li>
-    <br>
+    <br />
 
     <li> 
       인터넷에서 찾은 다른 방법은 지워진 원소들을 또다른 힙에 저장하는 것이다. 
@@ -92,11 +136,11 @@
       아이템이 hashable하지 않아도 사용가능하다는 장점도 있다
     </li>
 
-    <br>
+    <br />
 
     <h1> key값으로 액세스되고, value순으로 정렬되는 힙</h1>
 
-    <br>
+    <br />
 
 
     <li> 
@@ -109,7 +153,7 @@
         방식으로 구현하면 된다.
     </li>
 
-    <br>
+    <br />
 
     <li> 
       힙과 딕셔너리를 동시에 관리하는 코드를 매번 작성하기는 번거러우므로 라이브러리로 따로 만들기로 했다.
@@ -117,7 +161,7 @@
        클래스 이름은 HeapDict로 정했다
     </li>
 
-    <br>
+    <br />
 
     <li> 
       힙에 원소를 삽입하는 것도 heap[k] = v 로, 삭제할때는 del heap[k] 로 동작하게 된다.
@@ -128,12 +172,21 @@
     </li>
     
     <!-- 사진 1 넣어야됨~~~~~ -->
+    <br />
 
+    <img src="../images/priority1.PNG" width="700">
+    <br />
+    <img src="../images/priority2.PNG" width="700">
+    <br />
+    <img src="../images/priority3.PNG" width="700">
+    <br />
+    <img src="../images/priority4.PNG" width="700">
+    <br />
     <!-- 사진 2 넣어야됨~~~~~ -->
 
-    <h1> 사진 넣는곳 (바로 위에)</h1>
+  
 
-    <br>
+    <br />
 
     <li>  
     코드가 훨씬 더 간단해지는 것과 별개로, 속도면에서 느려지지 않을까 걱정했는데, 
@@ -147,7 +200,7 @@
     그래서 지금과 같은 방식으로 구현해줘야 한다.
     </li>
     <h1>Double-ended priority queue</h1>
-    <br>
+    <br />
 
     <li>
     extract-min 과 extract-max를 동시에 지원하는 우선순위큐이다. Double-ended priority queue 참조
@@ -159,22 +212,22 @@
      최댓값을 추출하고 싶으면 max heap에서 최댓값을 추출한 뒤 min heap에서는 그 값을 삭제, 
      최솟값을 추출할때는 그 반대로 작업하는 방법이 있다.
     </li>
-    <br>
+    <br />
     <h1>Running Median</h1>
-    <br>
+    <br />
     <li>
     원소가 계속 삽입 삭제될때, 중앙값을 빠르게 업데이트하는 방법. 
     바꿔 말하면 중간값 우선순위큐를 구현하는 방법이다.
-        <br>
+    <br />
         <br>
              <a href= "https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/">참고</a>
         <br>
-        <br>
+        <br />
     min heap과 max heap 두개의 힙을 만들어서 max heap의 원소들은 모두 min heap의 원소들보다 작고, 두 힙의 원소의 갯수 차이가 1이라가 되도록 유지하면, max heap의 top이 항상 median으로 유지된다는 내용이다.
     이 기법을 조금 더 변형하면 고정된 k에 대해서 k-th 원소를 추출할수 있는 힙을 만들수도 있겠다.
     관련 문제
     </li>
-    <br>
+    <br />
     <li>
     가운데를 말해요 : 삽입만 필요한 중앙값힙
     중앙값 : 삽입과 삭제가 필요한 중앙값힙
@@ -190,6 +243,7 @@
     기본적으로는 최대힙을 쓰는 방법보다 느리지만, n이 엄청 클 경우에 O(n)이 아닌 O(k)의 공간복잡도로 해결할 수 있다는 장점이 있다.
     관련 문제: N번째 큰 수
     </li>
- </p>
+
+</main>
 </body>
 </html>
