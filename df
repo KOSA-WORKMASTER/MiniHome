@@ -1,0 +1,102 @@
+[33mcommit ecc1da76f52d7cd944198492c500fd7d933918f7[m[33m ([m[1;36mHEAD -> [m[1;32mmkshim[m[33m)[m
+Merge: 35545d3 4869ee8
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:34:11 2023 +0900
+
+    Merge branch 'main' of https://github.com/KOSA-WORKMASTER/MiniHome into mkshim
+
+[33mcommit 4869ee86ab4e3ec4c37376a5f62857d9a5ddbf4a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: db741d3 574a16a
+Author: jsh031613 <jsh031613@naver.com>
+Date:   Fri Jun 2 16:29:30 2023 +0900
+
+    Merge pull request #2 from KOSA-WORKMASTER/jsh
+    
+    add graph, floyd html
+
+[33mcommit 574a16aac9075524937026e48910b08d0a2d310e[m[33m ([m[1;31morigin/jsh[m[33m)[m
+Author: bnbu <jsh031613@naver.com>
+Date:   Fri Jun 2 16:25:58 2023 +0900
+
+    add graph, floyd html
+
+[33mcommit 35545d3bfdade9d22c94bdee1d4f7dba7f79abcb[m[33m ([m[1;31morigin/mkshim[m[33m)[m
+Merge: e2cb595 db741d3
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:23:22 2023 +0900
+
+    Merge branch 'main' of https://github.com/KOSA-WORKMASTER/MiniHome into mkshim
+
+[33mcommit db741d3d0e8307e0b1c0c5f2bec2ea5d423e702b[m
+Author: Kyle <prophet@hanyang.ac.kr>
+Date:   Fri Jun 2 16:22:03 2023 +0900
+
+    SCSS Abstraction
+
+[33mcommit e2cb595ded12ef78f41c5c8d20b8ac1e15224414[m
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:18:41 2023 +0900
+
+    third push
+
+[33mcommit 4fd7b80644b8fa3176b2dfab7d5a41ae86fa0fca[m
+Merge: bc9c5d6 71a272e
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:17:50 2023 +0900
+
+    Merge branch 'main' of https://github.com/KOSA-WORKMASTER/MiniHome into mkshim
+
+[33mcommit 71a272ecc327427dcf6a4575a7ee21116f60b188[m
+Author: Kyle <prophet@hanyang.ac.kr>
+Date:   Fri Jun 2 16:15:29 2023 +0900
+
+    Index Page
+
+[33mcommit bc9c5d6e0ef80163aaf43299d2af6f2892edb035[m
+Merge: 7142a5e fd4d040
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:07:08 2023 +0900
+
+    Merge branch 'main' of https://github.com/KOSA-WORKMASTER/MiniHome into mkshim
+
+[33mcommit 7142a5eb6a676a0e4d2c8c4f5ee1d8fec513d7d5[m
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 16:05:35 2023 +0900
+
+    second push
+
+[33mcommit 36fc52b7eafb75dd5fca228e1d0b43c0fcf7aed3[m
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 15:47:39 2023 +0900
+
+    second commit
+
+[33mcommit fd4d040d28b3afe7690b3cba16cafdd642085711[m
+Author: bnbu <jsh031613@naver.com>
+Date:   Fri Jun 2 15:37:26 2023 +0900
+
+    first init
+
+[33mcommit 88389e3ec7c5fb32a7720db136dcfff3cb654540[m
+Author: Kyle <prophet@hanyang.ac.kr>
+Date:   Fri Jun 2 15:29:26 2023 +0900
+
+    jQuery CDN
+
+[33mcommit 4f9133da42799cb7741374a9f83e357b50157ccb[m
+Author: mkshim <myungaa0626@gmail.com>
+Date:   Fri Jun 2 15:13:14 2023 +0900
+
+    first commit
+
+[33mcommit 4305ce671e29d842ab81e3a8199cd825fd3c6741[m[33m ([m[1;32mmain[m[33m)[m
+Author: Kyle <prophet@hanyang.ac.kr>
+Date:   Fri Jun 2 14:48:16 2023 +0900
+
+    Settings
+
+[33mcommit a07596c8f3eb30f40f95ff9cbd335c188111ec49[m
+Author: Kyle <prophet@hanyang.ac.kr>
+Date:   Fri Jun 2 14:39:49 2023 +0900
+
+    Initial commit
