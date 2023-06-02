@@ -77,11 +77,11 @@ nav a:hover {
 }
 
 /* product section */
-#products {
+.products {
   padding: 50px 0;
   text-align: center;
 }
-#products h2 {
+.products h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
@@ -93,8 +93,8 @@ nav a:hover {
   text-align: center;
 }
 .product img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 10px;
 }
 .product h3 {
