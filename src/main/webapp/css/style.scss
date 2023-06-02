@@ -36,19 +36,34 @@ nav {
 
 /* hero section */
 #hero {
-  background: #f2f2f2;
+  position: relative;
+  &::before {
+    background-image: url("../images/maxresdefault.jpg");
+    background-size: cover;
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0.75;
+    z-index: -1;
+  }
   text-align: center;
   padding: 100px 0;
-
   h1 {
     font-size: 36px;
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
+    -webkit-text-stroke: 1px black;
   }
 
   p {
     font-size: 18px;
-    color: #666;
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
   }
 }
 
