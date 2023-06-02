@@ -1,11 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/graph.css">
-    <title>그래프 자료구조</title>
+    <title>Graph</title>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-
+<header>123</header>
+<nav>123</nav>
+<main>
+    <h1>그래프</h1>
+    <hr>
+    <img width="350px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/1280px-6n-graf.svg.png" alt="graph">
+    <h2>용어 정의</h2>
+    <ul>
+        <li>Walk: 노드나 엣지의 중복을 허용하는 경로</li>
+        <li>Open walk: 시작점과 끝점이 다른 walk</li>
+        <li>Closed walk: 시작점과 끝점이 같은 walk/li>
+        <li>Trail: 엣지의 중복이 없는 walk</li>
+        <li>Circuit(=tour): 엣지의 중복이 없고, 시작점과 끝점이 같은 walk (=closed trail)</li>
+        <li>Path: 노드와 엣지 모두 중복이 없는 walk</li>
+        <li>Cycle: 노드와 엣지 모두 중복이 없고, 시작점과 끝점이 같은 walk (=closed path)</li>
+    </ul>
+    <hr>
+    <h2>특수한 그래프</h2>
+    <ul>
+        <li>트리 (Tree)</li>
+        <ul>
+            <li>사이클이 없는 그래프</li>
+        </ul>
+        <li>이분 그래프 (Bipartite Graph)</li>
+        <ul>
+            <li>2색으로 색칠이 가능한 그래프</li>
+            <li>홀수 길이의 사이클이 없음</li>
+            <li>트리도 이분 그래프이다</li>
+        </ul>
+        <li>선인장</li>
+    </ul>
+    <hr>
+    <h2>보통의 작업들</h2>
+    <ul>
+        <li>무향 그래프에서 연결 요소 찾기</li>
+        <ul>
+            <li>DFS 혹은 BFS를 통해 찾거나, Union-Find 자료구조를 이용할 수도 있음</li>
+        </ul>
+        <li>무향 그래프에 사이클 여부</li>
+        <ul>
+            <li>그래프가 트리 혹은 포레스트 구조인지 확인</li>
+            <li>단순이 간선의 수가 (정점 수 - 1) 인지 여부로 확인 가능</li>
+            <li>혹은 DFS, BFS, Union-Find로 찾을 수 있음</li>
+        </ul>
+        <li>유향 그래프에 사이클 여부</li>
+        <ul>
+            <li>위상 정렬 알고리즘을 사용</li>
+        </ul>
+        <li>가중치 있는 그래프에 음수 사이클 여부</li>
+        <ul>
+            <li>Bellman-Ford 혹은 SPFA로 가능</li>
+        </ul>
+    </ul>
+    <hr>
+    <h2>구현</h2>
+    <ul>
+        <li>인접 행렬 (Adjacency Matrix)</li>
+        <li>인접 리스트 (Adjacency List)</li>
+    </ul>
+</main>
 </body>
 </html>

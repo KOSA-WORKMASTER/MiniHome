@@ -1,7 +1,7 @@
 body {
   position: relative;
   display: grid;
-  max-width: 1180px;
+  max-width: 80%;
   gap: 20px;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 110px auto;
@@ -19,11 +19,13 @@ header {
 nav {
   grid-area: nav;
   background-color: gray;
+  height: 500px;
 }
 
 main {
   grid-area: main;
   background-color: gray;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
