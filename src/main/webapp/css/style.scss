@@ -38,17 +38,17 @@ nav {
   background: #f2f2f2;
   text-align: center;
   padding: 100px 0;
-}
 
-#hero h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
-}
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
 
-#hero p {
-  font-size: 18px;
-  color: #666;
+  p {
+    font-size: 18px;
+    color: #666;
+  }
 }
 
 .btn {
@@ -70,34 +70,34 @@ nav {
 #products {
   padding: 50px 0;
   text-align: center;
-}
 
-#products h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
 }
 
 .product {
   display: inline-block;
   margin: 0 20px;
   text-align: center;
-}
 
-.product img {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-}
+  img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
 
-.product h3 {
-  font-size: 18px;
-  color: #333;
-}
+  h3 {
+    font-size: 18px;
+    color: #333;
+  }
 
-.product p {
-  font-size: 16px;
-  color: #666;
+  p {
+    font-size: 16px;
+    color: #666;
+  }
 }
 
 /* footer */
