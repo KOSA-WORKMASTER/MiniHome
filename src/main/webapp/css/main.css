@@ -1,0 +1,29 @@
+body {
+  position: relative;
+  display: grid;
+  max-width: 1180px;
+  gap: 20px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 110px auto;
+  grid-template-areas: "header header" "nav main";
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+header {
+  grid-area: header;
+  background-color: gray;
+}
+
+nav {
+  grid-area: nav;
+  background-color: gray;
+}
+
+main {
+  grid-area: main;
+  background-color: gray;
+}
+
+/*# sourceMappingURL=main.css.map */
