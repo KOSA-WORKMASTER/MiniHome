@@ -36,7 +36,7 @@ nav a:hover {
   padding: 100px 0;
 }
 #hero::before {
-  background-image: url("maxresdefault.jpg");
+  background-image: url("../images/maxresdefault.jpg");
   background-size: cover;
   position: absolute;
   content: "";

@@ -1,92 +1,150 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Linked List</title>
-    <script type="text/javascript" src="js/bootstrap.min.js" defer></script>
-    <script type="text/javascript" src="js/jquery.min.js" defer></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js" defer></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/main.css">
     <style>
-         img {
+        img {
             height: 200px;
             width: 500px;
             border: 1px black solid;
         }
     </style>
 </head>
-<body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">홈</a></li>
-                <li><a href="graph.html">자료구조</a></li>
-                <li><a href="floyd_warshall.html">알고리듬</a></li>
-                <li><a href="https://www.acmicpc.net/step">문제풀기</a></li>
-                <li><a href="#">고객센터</a></li>
-            </ul>
-        </nav>
-    </header>
-    <side>
-        <div>MENU</div>
-        <hr>
+<body>
+<header>
+    <nav>
         <ul>
-            <li>자료구조</li>
-            <ul>
-                <li>
-                    <a href="graph.html">Graph</a>
-                </li>
-                <li>
-                    <b>Linked List</b>
-                </li>
-                <li>
-                    <a href="priorityQueue.html">Priority Queue</a>
-                </li>
-            </ul>
-            <hr>
-            <li>알고리듬</li>
-            <ul>
-                <li>
-                    <a href="floyd_warshall.html">Floyd Warshall Algorithm</a>
-                </li>
-                <li>
-                    <a href="greedyAlgorithm.html">Greedy Algorithm</a>
-                </li>
-                <li>
-                    <a href="Z.html">Z Algorithm</a>
-                </li>
-            </ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="graph.html">자료구조</a></li>
+            <li><a href="floyd_warshall.html">알고리듬</a></li>
+            <li><a href="https://www.acmicpc.net/step">문제풀기</a></li>
+            <li><a href="#">고객센터</a></li>
         </ul>
-    </side>
-    <main>
-        <h1>연결 리스트 (Linked List)</h1> 
-        <img src="https://hudi.blog/static/73d52eeadd7cd6786538357697f9fcae/d35da/01.png">
-        <ul><li>자료구조 수업에서 배열과 함께 처음 배우는 가장 기본적인 자료구조이다. 설명은 생략.</li></ul>
-        <ul><li>다음 노드의 포인터만 갖고 있느냐 이전 노도의 포인터도 갖고 있느냐에 따라서, 
-            단일 링크드 리스트와 양방향 링크드 리스트로 구현할수 있다. 맨 앞 노드와 맨 뒤 노드를 연결해서 서큘러 링크드 리스트를 사용하는 경우도 있다.</li></ul>
+    </nav>
+</header>
+
+<side>
+    <div>MENU</div>
+    <hr>
+    <ul>
+        <li>자료구조</li>
+        <ul>
+            <li>
+                <a href="graph.html">Graph</a>
+            </li>
+            <li>
+                <b>Linked List</b>
+            </li>
+            <li>
+                <a href="priorityQueue.html">Priority Queue</a>
+            </li>
+        </ul>
         <hr>
-        <ul><li>구체적인 케이스를 보자. 연결리스트를 필요로 하는 문제는 리스트의 중간 위치에서 삽입과 삭제를 요구하는 문제들이다.</li></ul>
-        <ul><ul><li>i번째 위치에 삽입/삭제를 반복하는 문제 / 현재 위치에서 i번째 뒤에 있는 원소를 삭제,삽입 하는 문제</li></ul>
-        <ul><li>연결리스트를 쓰면 삽입/삭제는 O(1)에 해결할수 있지만, 포인터를 i번째 까지 이동시키는데 O(n)이 걸려서 어차피 총 복잡도는 O(n)이다</li></ul>
-        <ul><li>차라리 그냥 배열을 쓰면, 삽입/삭제는 O(n)이지만 포인터를 이동시킬 필요가 없으니까, 총 시간복잡도는 마찬가지로 O(n) 이다.</li></ul>
-        <ul><li>굳이 연결리스트를 쓸 필요가 없다. 그냥 배열을 쓰자</li></ul>
-        <ul><li>Order Statistic Tree를 쓰면, n번째로 큰 원소를 찾는것과 그 원소를 삭제시키는 것을 모두 O(nlogn)에 할수 있으므로, 더 효율적으로 풀수 있는 문제들도 많이 있다</li></ul>
-        <ul><li><a href="https://www.teferi.net/ps/%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4_%EB%AC%B8%EC%A0%9C" target="_blank">관련 문제: 요세푸스 문제</a></li></ul></ul>
-        <hr>
-        <ul><li>현재 위치를 이전 또는 다음 위치로 이동, 현재 위치에서 삽입이나 삭제를 반복</li></ul>
-        <ul><ul><li>연결리스트를 쓰면 이 네가지 연산을 모두 O(1)에 처리 가능하다.</li></ul>
-        <ul><li>두개의 스택을 써서 똑같은 시간복잡도에 구현하는 방법이 있다.</li></ul>
-        <ul><li>현재 위치보다 앞에 있는 원소들을 l-스택에 모두 담고, 현재 위치보다 뒤에 있는 원소들을 r-스택에 모두 담는다. 현재 위치와 가까운 원소가 스택의 top에 있어야 하므로, r-스택은 순서가 뒤집힌 상태가 된다.</li></ul>
-        <ul><li>현재 위치를 왼쪽으로 이동할때는 l-스택에서 pop한 원소를 r-stack에 push하면 된다. 시간복잡도 O(1). 오른쪽으로 이동도 마찬가지.</li></ul>
-        <ul><li>삽입,삭제는 당연히 O(1)</li></ul>
-        <ul><li><a href="https://www.teferi.net/ps/problems/boj/1406" target="_blank">관련 문제: 풍선 터뜨리기</a></li></ul></ul>
-        <hr>
-        <ul><li>환형 연결리스트에서 이러한 작업을 해야하는 문제의 경우는 덱을 이용해서 구현하면 된다.</li></ul>
-        <ul><ul><li>덱의 끝부분을 현재 위치로 만들고, 포인터를 왼쪽이나 오른쪽으로 옮기는 것은 덱의 한쪽 끝에서 원소를 꺼내서 반대쪽 끝에 추가하는 것으로 처리하면 된다.</li></ul>
-        <ul><li><a href="https://www.teferi.net/ps/problems/boj/2346" target="_blank">관련 문제: 풍선 터뜨리기</a></li></ul>
-        <ul><li>문제자체는 위치를 1칸씩 옮기는게 아니라 i칸씩 옮기는 거라서 앞에서 말한대로 배열을 써서 풀수 있는 패턴의 문제이다. 다만 방금 설명한 방법처럼 덱을 써서 푸는 것도 가능해서 여기에 올림.</li></ul></ul>
-        </main>
+        <li>알고리듬</li>
+        <ul>
+            <li>
+                <a href="floyd_warshall.html">Floyd Warshall Algorithm</a>
+            </li>
+            <li>
+                <a href="greedyAlgorithm.html">Greedy Algorithm</a>
+            </li>
+            <li>
+                <a href="Z.html">Z Algorithm</a>
+            </li>
+        </ul>
+    </ul>
+</side>
+
+<main>
+    <h1>연결 리스트 (Linked List)</h1>
+    <img src="https://hudi.blog/static/73d52eeadd7cd6786538357697f9fcae/d35da/01.png">
+    <ul>
+        <li>자료구조 수업에서 배열과 함께 처음 배우는 가장 기본적인 자료구조이다. 설명은 생략.</li>
+    </ul>
+    <ul>
+        <li>다음 노드의 포인터만 갖고 있느냐 이전 노도의 포인터도 갖고 있느냐에 따라서,
+            단일 링크드 리스트와 양방향 링크드 리스트로 구현할수 있다. 맨 앞 노드와 맨 뒤 노드를 연결해서 서큘러 링크드 리스트를 사용하는 경우도 있다.
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li>구체적인 케이스를 보자. 연결리스트를 필요로 하는 문제는 리스트의 중간 위치에서 삽입과 삭제를 요구하는 문제들이다.</li>
+    </ul>
+    <ul>
+        <ul>
+            <li>i번째 위치에 삽입/삭제를 반복하는 문제 / 현재 위치에서 i번째 뒤에 있는 원소를 삭제,삽입 하는 문제</li>
+        </ul>
+        <ul>
+            <li>연결리스트를 쓰면 삽입/삭제는 O(1)에 해결할수 있지만, 포인터를 i번째 까지 이동시키는데 O(n)이 걸려서 어차피 총 복잡도는 O(n)이다</li>
+        </ul>
+        <ul>
+            <li>차라리 그냥 배열을 쓰면, 삽입/삭제는 O(n)이지만 포인터를 이동시킬 필요가 없으니까, 총 시간복잡도는 마찬가지로 O(n) 이다.</li>
+        </ul>
+        <ul>
+            <li>굳이 연결리스트를 쓸 필요가 없다. 그냥 배열을 쓰자</li>
+        </ul>
+        <ul>
+            <li>Order Statistic Tree를 쓰면, n번째로 큰 원소를 찾는것과 그 원소를 삭제시키는 것을 모두 O(nlogn)에 할수 있으므로, 더 효율적으로 풀수 있는 문제들도 많이
+                있다
+            </li>
+        </ul>
+        <ul>
+            <li><a href="https://www.teferi.net/ps/%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4_%EB%AC%B8%EC%A0%9C"
+                   target="_blank">관련 문제: 요세푸스 문제</a></li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <li>현재 위치를 이전 또는 다음 위치로 이동, 현재 위치에서 삽입이나 삭제를 반복</li>
+    </ul>
+    <ul>
+        <ul>
+            <li>연결리스트를 쓰면 이 네가지 연산을 모두 O(1)에 처리 가능하다.</li>
+        </ul>
+        <ul>
+            <li>두개의 스택을 써서 똑같은 시간복잡도에 구현하는 방법이 있다.</li>
+        </ul>
+        <ul>
+            <li>현재 위치보다 앞에 있는 원소들을 l-스택에 모두 담고, 현재 위치보다 뒤에 있는 원소들을 r-스택에 모두 담는다. 현재 위치와 가까운 원소가 스택의 top에 있어야 하므로, r-스택은
+                순서가 뒤집힌 상태가 된다.
+            </li>
+        </ul>
+        <ul>
+            <li>현재 위치를 왼쪽으로 이동할때는 l-스택에서 pop한 원소를 r-stack에 push하면 된다. 시간복잡도 O(1). 오른쪽으로 이동도 마찬가지.</li>
+        </ul>
+        <ul>
+            <li>삽입,삭제는 당연히 O(1)</li>
+        </ul>
+        <ul>
+            <li><a href="https://www.teferi.net/ps/problems/boj/1406" target="_blank">관련 문제: 풍선 터뜨리기</a></li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <li>환형 연결리스트에서 이러한 작업을 해야하는 문제의 경우는 덱을 이용해서 구현하면 된다.</li>
+    </ul>
+    <ul>
+        <ul>
+            <li>덱의 끝부분을 현재 위치로 만들고, 포인터를 왼쪽이나 오른쪽으로 옮기는 것은 덱의 한쪽 끝에서 원소를 꺼내서 반대쪽 끝에 추가하는 것으로 처리하면 된다.</li>
+        </ul>
+        <ul>
+            <li><a href="https://www.teferi.net/ps/problems/boj/2346" target="_blank">관련 문제: 풍선 터뜨리기</a></li>
+        </ul>
+        <ul>
+            <li>문제자체는 위치를 1칸씩 옮기는게 아니라 i칸씩 옮기는 거라서 앞에서 말한대로 배열을 써서 풀수 있는 패턴의 문제이다. 다만 방금 설명한 방법처럼 덱을 써서 푸는 것도 가능해서 여기에
+                올림.
+            </li>
+        </ul>
+    </ul>
+</main>
 </body>
+
 </html>

@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Z 알고리즘</title>
-    <script type="text/javascript" src="js/bootstrap.min.js" defer></script>
-    <script type="text/javascript" src="js/jquery.min.js" defer></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js" defer></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -16,75 +17,112 @@
         }
     </style>
 </head>
-<body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">홈</a></li>
-                <li><a href="graph.html">자료구조</a></li>
-                <li><a href="floyd_warshall.html">알고리듬</a></li>
-                <li><a href="https://www.acmicpc.net/step">문제풀기</a></li>
-                <li><a href="#">고객센터</a></li>
-            </ul>
-        </nav>
-    </header>
-    <side>
-        <div>MENU</div>
-        <hr>
+<body>
+<header>
+    <nav>
         <ul>
-            <li>자료구조</li>
-            <ul>
-                <li>
-                    <a href="graph.html">Graph</a>
-                </li>
-                <li>
-                    <a href="Linked%20List.html">Linked List</a>
-                </li>
-                <li>
-                    <a href="priorityQueue.html">Priority Queue</a>
-                </li>
-            </ul>
-            <hr>
-            <li>알고리듬</li>
-            <ul>
-                <li>
-                    <a href="floyd_warshall.html">Floyd Warshall Algorithm</a>
-                </li>
-                <li>
-                    <a href="greedyAlgorithm.html">Greedy Algorithm</a>
-                </li>
-                <li>
-                    <b>Z Algorithm</b>
-                </li>
-            </ul>
+            <li><a href="../index.html">홈</a></li>
+            <li><a href="graph.html">자료구조</a></li>
+            <li><a href="floyd_warshall.html">알고리듬</a></li>
+            <li><a href="https://www.acmicpc.net/step">문제풀기</a></li>
+            <li><a href="#">고객센터</a></li>
         </ul>
-    </side>
-    <main>
-        <h1>Z 알고리즘</h1>
-        <img src="https://developerlee79.github.io/images/blog/2022-06-23/0.png">
-        <ul><li>Z 알고리즘은 Z array를 빠르게 구하는 알고리즘이다. O(n)에 Z array를 구할수 있다.</li></ul>
+    </nav>
+</header>
+
+<side>
+    <div>MENU</div>
+    <hr>
+    <ul>
+        <li>자료구조</li>
+        <ul>
+            <li>
+                <a href="graph.html">Graph</a>
+            </li>
+            <li>
+                <a href="Linked%20List.html">Linked List</a>
+            </li>
+            <li>
+                <a href="priorityQueue.html">Priority Queue</a>
+            </li>
+        </ul>
         <hr>
-        <h2>Z array</h2>
-        <ul><li>Z array는 S와 S[i:]의 최대공통접두사의 길이를 저장하는 배열이다.</li></ul>
-        <ul><li> 주어진 문자열에 대해서 만들어진 z array의 예를 들면,</li></ul>
-        <ul><ul><li> “aaaaa” ⇒ [X, 4, 3, 2, 1]</li></ul>
-        <ul><li>  “aaabaab” ⇒ [X, 2, 1, 0, 2, 1, 0]</li></ul>
-        <ul><li>“abacaba” ⇒ [X, 0, 1, 0, 3, 0, 1]</li></ul>
-        <ul><li>(z[0]의 값은 보통 정의되지 않는다)</li></ul></ul>
-        <hr>
-        <h2>Z algorithm</h2>
-        <ul><li><a href="https://blog.chodaeho.com/posts/2021/z-algorithm" target="_blank">https://blog.chodaeho.com/posts/2021/z-algorithm</a>에서는 기본 구현과 조금 더 깔끔하게 정리한 구현, 두가지 방법을 소개한다</li></ul>
-        <ul><li> 하지만 <a href="https://cp-algorithms.com/string/z-function.html#implementation" target="_blank">https://cp-algorithms.com/string/z-function.html#implementation</a> 의 코드가 가장 깔끔하다. 나도 이쪽 구현을 python으로 포팅해서 사용했다.</li></ul>
-        <ul><li>z[0]이 가져야 하는 값은 정해져있지 않아서 보통은 0으로 저장하는 경우가 많지만, 내 경우는 len(s)로 저장하게 만들었다.</li></ul>
-        <hr>
-        <h2>Z array의 활용</h2>
-        <ul><li>문자열에서도 설명할테니 그쪽 참고</li></ul>
-        <ul><li>대체적으로는 KMP의 failure function으로 할수 있는 것들과 많이 겹친다. prefix 관련된 것들을 구할 때 사용된다.</li></ul>
-        <ul><li>문자열 매칭 문제를 O(n+m)에 풀 수도 있다. P#S 라는 문자열을 만들어 Z 배열을 구하고, Z배열에서 z[i]==len(P)인 i를 모두 찾으면 된다.</li></ul>
-        <hr>
-        <h2>관련 문제</h2>
-        <ul><li>문자열과 쿼리 (문자열을 뒤집은 뒤에) Z array를 구하기만 하면 된다.</li></ul>
-    </main>
+        <li>알고리듬</li>
+        <ul>
+            <li>
+                <a href="floyd_warshall.html">Floyd Warshall Algorithm</a>
+            </li>
+            <li>
+                <a href="greedyAlgorithm.html">Greedy Algorithm</a>
+            </li>
+            <li>
+                <b>Z Algorithm</b>
+            </li>
+        </ul>
+    </ul>
+</side>
+
+<main>
+    <h1>Z 알고리즘</h1>
+    <img src="https://developerlee79.github.io/images/blog/2022-06-23/0.png">
+    <ul>
+        <li>Z 알고리즘은 Z array를 빠르게 구하는 알고리즘이다. O(n)에 Z array를 구할수 있다.</li>
+    </ul>
+    <hr>
+    <h2>Z array</h2>
+    <ul>
+        <li>Z array는 S와 S[i:]의 최대공통접두사의 길이를 저장하는 배열이다.</li>
+    </ul>
+    <ul>
+        <li> 주어진 문자열에 대해서 만들어진 z array의 예를 들면,</li>
+    </ul>
+    <ul>
+        <ul>
+            <li> “aaaaa” ⇒ [X, 4, 3, 2, 1]</li>
+        </ul>
+        <ul>
+            <li> “aaabaab” ⇒ [X, 2, 1, 0, 2, 1, 0]</li>
+        </ul>
+        <ul>
+            <li>“abacaba” ⇒ [X, 0, 1, 0, 3, 0, 1]</li>
+        </ul>
+        <ul>
+            <li>(z[0]의 값은 보통 정의되지 않는다)</li>
+        </ul>
+    </ul>
+    <hr>
+    <h2>Z algorithm</h2>
+    <ul>
+        <li><a href="https://blog.chodaeho.com/posts/2021/z-algorithm" target="_blank">https://blog.chodaeho.com/posts/2021/z-algorithm</a>에서는
+            기본 구현과 조금 더 깔끔하게 정리한 구현, 두가지 방법을 소개한다
+        </li>
+    </ul>
+    <ul>
+        <li> 하지만 <a href="https://cp-algorithms.com/string/z-function.html#implementation" target="_blank">https://cp-algorithms.com/string/z-function.html#implementation</a>
+            의 코드가 가장 깔끔하다. 나도 이쪽 구현을 python으로 포팅해서 사용했다.
+        </li>
+    </ul>
+    <ul>
+        <li>z[0]이 가져야 하는 값은 정해져있지 않아서 보통은 0으로 저장하는 경우가 많지만, 내 경우는 len(s)로 저장하게 만들었다.</li>
+    </ul>
+    <hr>
+    <h2>Z array의 활용</h2>
+    <ul>
+        <li>문자열에서도 설명할테니 그쪽 참고</li>
+    </ul>
+    <ul>
+        <li>대체적으로는 KMP의 failure function으로 할수 있는 것들과 많이 겹친다. prefix 관련된 것들을 구할 때 사용된다.</li>
+    </ul>
+    <ul>
+        <li>문자열 매칭 문제를 O(n+m)에 풀 수도 있다. P#S 라는 문자열을 만들어 Z 배열을 구하고, Z배열에서 z[i]==len(P)인 i를 모두 찾으면 된다.</li>
+    </ul>
+    <hr>
+    <h2>관련 문제</h2>
+    <ul>
+        <li>문자열과 쿼리 (문자열을 뒤집은 뒤에) Z array를 구하기만 하면 된다.</li>
+    </ul>
+</main>
 </body>
+
 </html>

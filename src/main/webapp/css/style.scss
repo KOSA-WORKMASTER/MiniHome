@@ -37,8 +37,9 @@ nav {
 /* hero section */
 #hero {
   position: relative;
+
   &::before {
-    background-image: url("maxresdefault.jpg");
+    background-image: url("../images/maxresdefault.jpg");
     background-size: cover;
     position: absolute;
     content: "";
@@ -49,8 +50,10 @@ nav {
     opacity: 0.75;
     z-index: -1;
   }
+
   text-align: center;
   padding: 100px 0;
+
   h1 {
     font-size: 36px;
     font-weight: bold;
